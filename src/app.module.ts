@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { SellerProfileModule } from './seller_profile_creation/sellerProfile.module';
+import { itemListingModule } from './item_listing/itemListing.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { SellerProfileModule } from './seller_profile_creation/sellerProfile.mod
       synchronize: false, // ❗ false because DB is already created
     }),
     AuthModule,
-    SellerProfileModule
+    SellerProfileModule,
+    itemListingModule
   ],
 })
 export class AppModule {}
