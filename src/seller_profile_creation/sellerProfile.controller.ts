@@ -32,12 +32,6 @@ async createSellerProfile(
   return this.sellerProfileService.createSellerProfile(userId, bioDto, file);
 }
 
- @Get(':sellerId/profile-picture')
-  async getProfilePic(@Param('sellerId') seller_id: string, @Res() res: Response) {
-    const image = await this.sellerProfileService.getProfilePic(seller_id);
-    if (!image) throw new NotFoundException('No image found');
-    res.setHeader('Content-Type', 'image/jpeg'); // TODO: detect actual mime
-    res.send(image);
-  }
+
 
 }
