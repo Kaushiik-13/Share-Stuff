@@ -117,6 +117,12 @@ export class rentalRequestService {
                     .andWhere('request_id != :requestId', { requestId })
                     .andWhere('status IN (:...statuses)', { statuses: ['pending', 'accepted'] })
                     .execute();
+                await this.itemRepo
+                    .createQueryBuilder()
+                    .update()
+                    .set({ status: 'unavailable' })
+                    .where('item_id = :itemId', { itemId: request.item_id })
+                    .execute();
             }
         }
 
