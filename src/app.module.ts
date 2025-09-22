@@ -4,6 +4,7 @@ import { AuthModule } from './auth/auth.module';
 import { SellerProfileModule } from './seller_profile_creation/sellerProfile.module';
 import { itemListingModule } from './item_listing/itemListing.module';
 import { ReviewsModule } from './reviews/reviews.module';
+import { rentalRequestModule } from './rental_requests/rentalRequest.module';
 
 @Module({
   imports: [
@@ -20,7 +21,8 @@ import { ReviewsModule } from './reviews/reviews.module';
     AuthModule,
     SellerProfileModule,
     itemListingModule,
-    ReviewsModule
+    ReviewsModule,
+    rentalRequestModule
   ],
 })
-export class AppModule {}
+export class AppModule { }
