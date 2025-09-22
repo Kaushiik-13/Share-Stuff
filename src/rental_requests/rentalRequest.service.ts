@@ -7,6 +7,6 @@ import { Item } from 'src/entities/items.entity';
 @Injectable()
 export class rentalRequestService {
     constructor(
-                @InjectRepository(Item) private itemRepo: Repository<Item>
+        @InjectRepository(Item) private itemRepo: Repository<Item>
     ){}
 }
